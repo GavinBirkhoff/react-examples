@@ -1,5 +1,19 @@
-const Sub = ()=>{
-    return <h1>sub</h1>
-}
+import { useState } from "react";
 
-export default Sub
+const Sub = () => {
+  const [count, setCount] = useState(1);
+  return (
+    <div>
+      <span>{count}</span>
+      <button
+        onClick={() => {
+          setCount(count + 1);
+        }}
+      >
+        +
+      </button>
+    </div>
+  );
+};
+
+export default Sub;
