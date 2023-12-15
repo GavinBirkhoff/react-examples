@@ -1,0 +1,35 @@
+{
+  "name": "react18-tour",
+  "private": true,
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "lint": "eslint --fix src"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.28",
+    "@types/react-dom": "^18.0.11",
+    "@vitejs/plugin-react-swc": "^3.0.0",
+    "eslint-config-lavy": "^1.0.2-Alpha",
+    "lavy": "^1.0.2-Alpha.0",
+    "stylelint-config-lavy": "^1.0.2-Alpha",
+    "vite": "^4.2.0"
+  },
+  "description": "在react的每个角落参观，探索react用法实例(官网没有给出的或着没有想到的)。",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GavinBirkhoff/react-tour.git"
+  },
+  "author": "Gavin",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/GavinBirkhoff/react-tour/issues"
+  },
+  "homepage": "https://github.com/GavinBirkhoff/react-tour#readme"
+}
