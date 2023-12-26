@@ -1,19 +1,19 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const Sub = () => {
+  // debugger
   const [count, setCount] = useState(1);
-  return (
-    <div>
-      <span>{count}</span>
-      <button
-        onClick={() => {
-          setCount(count + 1);
-        }}
-      >
-        +
-      </button>
-    </div>
-  );
+  const handleClick = () => {
+    // debugger
+    setCount(count + 1);
+  };
+  useEffect(()=>{
+    debugger
+  },[])
+  useEffect(()=>{
+    debugger
+  },[count])
+  return <section onClick={handleClick}>sub-count:{count}</section>;
 };
 
 export default Sub;

@@ -7,20 +7,9 @@ function App() {
   const [count, setCount] = useState(1);
 
   return (
-    <div className="App">
+    <div className="app-container">
       <Sub></Sub>
-      {/* <header className="App-header">
-        <span className="App-span">span </span>
-        <p className="App-ppp">ppp</p>
-      </header> */}
-      <section>count:{count}</section>
-      <button
-        onClick={() => {
-          setCount(count + 1);
-        }}
-      >
-        +
-      </button>
+      <p>count:{count}</p>
     </div>
   );
 }
