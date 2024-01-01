@@ -1,8 +1,8 @@
 import { useState } from 'react';
-import TabButton from './TabButton.jsx';
-import AboutTab from './AboutTab.jsx';
-import PostsTab from './PostsTab.jsx';
-import ContactTab from './ContactTab.jsx';
+import TabButton from './TabButton';
+import AboutTab from './AboutTab';
+import PostsTab from './PostsTab';
+import ContactTab from './ContactTab';
 
 export default function TabContainer() {
   const [tab, setTab] = useState('about');

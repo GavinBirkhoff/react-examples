@@ -1,24 +1,13 @@
-import useLocation from "../hooks/useLocation";
-import State from "../fixtures/state";
-import Id from "../fixtures/id";
-import SuspenseView from "../fixtures/suspense";
+import useLocation from '../hooks/useLocation'
+
+import routes from './routes'
 
 const Fixtures = () => {
-  const { pathname } = useLocation();
+  const { pathname } = useLocation()
   const getFixtureContent = (route) => {
-    console.log(route);
-    switch (route) {
-      case "/state":
-        return <State />;
-      case "/id":
-        return <Id/>;
-      case "/suspense":
-        return <SuspenseView/>;
-      default:
-        return <p>404</p>;
-    }
-  };
-  return <div>{getFixtureContent(pathname)}</div>;
-};
+    return routes.find((item) => route === item.path)?.component ?? <p>404</p>
+  }
+  return <div className="main">{getFixtureContent(pathname)}</div>
+}
 
-export default Fixtures;
+export default Fixtures

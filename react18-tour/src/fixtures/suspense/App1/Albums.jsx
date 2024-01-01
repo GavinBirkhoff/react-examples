@@ -1,19 +1,14 @@
-import { fetchData } from './data.js';
+import { fetchData } from './data';
 
-// 注意：此组件使用了一种实验性 API
-// 该 API 尚未在稳定版本的 React 中发布。
+// 注意：这个组件使用了一个实验性的 API
+// 该 API 并未在 React 的稳定版本中可用
 
-// 如果想找实际的例子，可以尝试一个
-// 已经集成了 suspense 的框架，比如 Relay 或 Next.js。
+// 在实际的例子中，你可以尝试已经
+// 与 Suspense 集成的框架，例如 Relay 或 Next.js。
 
-export default function SearchResults({ query }) {
-  if (query === '') {
-    return null;
-  }
-  const albums = use(fetchData(`/search?q=${query}`));
-  if (albums.length === 0) {
-    return <p>No matches for <i>"{query}"</i></p>;
-  }
+export default function Albums({ artistId }) {
+  console.log('Albums');
+  const albums = use(fetchData(`/${artistId}/albums`));
   return (
     <ul>
       {albums.map(album => (
@@ -25,8 +20,8 @@ export default function SearchResults({ query }) {
   );
 }
 
-// 这是一个解决演示中的一个 bug 的临时实现。
-// TODO：待 bug 修复后应该替换为真正的实现。
+// 这是一个解决 bug 的临时方案，以便让演示运行起来。
+// TODO：当 bug 修复后，用真正的实现替换。
 function use(promise) {
   if (promise.status === 'fulfilled') {
     return promise.value;

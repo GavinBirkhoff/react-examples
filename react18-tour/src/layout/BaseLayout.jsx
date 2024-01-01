@@ -17,13 +17,9 @@ const BaseLayout = () => {
     };
   }, []);
   return (
-    <div>
-      <div>
+    <div className="layout">
         <Side />
-      </div>
-      <div>
         <Fixtures />
-      </div>
     </div>
   );
 };

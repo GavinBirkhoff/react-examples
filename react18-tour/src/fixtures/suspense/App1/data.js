@@ -1,6 +1,6 @@
-// 注意：使用 suspense 进行数据获取的方式
-// 取决于与其配合使用的框架。
-// 缓存逻辑通常会在框架内部处理。
+// 注意：你进行数据获取的方式取决于
+// 你与 Suspense 集成的框架。
+// 通常，缓存逻辑会在框架内部。
 
 let cache = new Map();
 
@@ -12,20 +12,20 @@ export function fetchData(url) {
 }
 
 async function getData(url) {
-  if (url.startsWith('/search?q=')) {
-    return await getSearchResults(url.slice('/search?q='.length));
+  if (url === '/the-beatles/albums') {
+    return await getAlbums();
   } else {
     throw Error('Not implemented');
   }
 }
 
-async function getSearchResults(query) {
-// 添加一个假延迟来让等待更加明显。
+async function getAlbums() {
+  // 添加一个假的延迟，以便让等待更加明显。
   await new Promise(resolve => {
-    setTimeout(resolve, 1500);
+    setTimeout(resolve, 3000);
   });
 
-  const allAlbums = [{
+  return [{
     id: 13,
     title: 'Let It Be',
     year: 1970
@@ -78,13 +78,4 @@ async function getSearchResults(query) {
     title: 'Please Please Me',
     year: 1963
   }];
-
-  const lowerQuery = query.trim().toLowerCase();
-  return allAlbums.filter(album => {
-    const lowerTitle = album.title.toLowerCase();
-    return (
-      lowerTitle.startsWith(lowerQuery) ||
-      lowerTitle.indexOf(' ' + lowerQuery) !== -1
-    )
-  });
 }
