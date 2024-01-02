@@ -18,6 +18,9 @@ import Transition from '../fixtures/transition/App'
 import SuspenseApp from '../fixtures/suspense/App'
 // api start
 import MemoApp from '../fixtures/api/memo/App'
+// demo
+import Lifecycle from '../fixtures/lifecycle/App'
+import ErrorBoundary from '../fixtures/errorBoundary/App'
 const routes = [
   { path: '/useCallback', label: 'useCallback', component: <Callback /> },
   { path: '/useContext', label: 'useContext', component: <Context /> },
@@ -36,7 +39,9 @@ const routes = [
   { path: '/useSyncExternalStore', label: 'useSyncExternalStore', component: <SyncExternalStore /> },
   { path: '/useTransition', label: 'useTransition', component: <Transition /> },
   { path: '/Suspense', label: '<Suspense>', component: <SuspenseApp /> },
-  { path: '/memo', label: 'memo', component: <MemoApp /> }
+  { path: '/memo', label: 'memo', component: <MemoApp /> },
+  { path: '/lifecycle', label: 'Lifecycle Class', component: <Lifecycle /> },
+  { path: '/errorBoundary', label: 'errorBoundary', component: <ErrorBoundary /> },
 ]
 
 export default routes
